@@ -1,0 +1,13 @@
+{
+  "name": "19-bakendcatalogocafe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mamani Milton",
+  "license": "MIT",
+  "description": "Backend de catalogos de productos de una cafeteria",
+  "type": "module"
+}
