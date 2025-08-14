@@ -1,5 +1,13 @@
 import producto from "../models/producto";
 
+export const test =(req, res) =>{
+  res.status(200);
+  res.send('primera Prueba desde el backend')
+}
+
+export const leerProductos=( req, res) =>{
+
+} 
 
 // Crear un nuevo producto
 export const crearProducto = async (req, res) => {
@@ -11,3 +19,8 @@ export const crearProducto = async (req, res) => {
     res.status(400).json({mensaje: 'Error al crear el producto'});
   }
 };
+
+// funcion para editar productos 
+
+// funcion para borrar productos.
+
