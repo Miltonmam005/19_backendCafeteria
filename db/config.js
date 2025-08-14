@@ -1,5 +1,7 @@
-// import mongoose from "mongoose"
+import mongoose from "mongoose"
 
-// try {
-//     mongoose.connet()
-// };
+try {
+    mongoose.connect()
+} catch (error) {
+    console.error("Error connecting to MongoDB:", error)
+}
