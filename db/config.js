@@ -1,5 +1,5 @@
-import mongoose from "mongoose"
+// import mongoose from "mongoose"
 
-try {
-    mongoose.connet()
-}
+// try {
+//     mongoose.connet()
+// };
