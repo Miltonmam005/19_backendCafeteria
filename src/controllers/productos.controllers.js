@@ -1,4 +1,4 @@
-import producto from "../models/producto";
+import Producto from "../models/producto.js";
 
 export const test =(req, res) =>{
   res.status(200);
@@ -12,7 +12,7 @@ export const leerProductos=( req, res) =>{
 // Crear un nuevo producto
 export const crearProducto = async (req, res) => {
   try {
-    const nuevoProducto = new producto(req.body);
+    const nuevoProducto = new Producto(req.body);
     await nuevoProducto.save();
     res.status(201).json({mensaje: 'El producto fue creado existosamente'});
   } catch (error) {

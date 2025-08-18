@@ -1,7 +1,17 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 try {
-    mongoose.connect()
+
+    mongoose.connect(process.env.MONGODB).then(()=>{
+
+        console.info('BD conectada')
+
+    })
+
 } catch (error) {
-    console.error("Error connecting to MongoDB:", error)
+
+    console.error(error)
+
 }
+
+export default mongoose
