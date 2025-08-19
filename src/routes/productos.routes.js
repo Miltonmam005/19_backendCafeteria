@@ -1,16 +1,10 @@
 import { Router } from "express";
-import {
-  crearProducto,
-  leerProductos,
-  test,
-  leerProductosID,
-} from "../controllers/productos.controllers.js";
-import { get } from "http";
+import { borrarProductoPorId, crearProducto, editarProductoPorId, leerProductoPorId, leerProductos, test } from "../controllers/productos.controllers.js";
 
 const router = Router();
-// get, post , put, delete
-router.route("/test").get(test);
-router.route("/").get(leerProductos).post(crearProducto);
-router.route("/:id").get(leerProductosID);
+// get, post, put, delete solicitud, request
+router.route('/test').get(test)
+router.route('/').get(leerProductos).post(crearProducto)
+router.route('/:id').get(leerProductoPorId).delete(borrarProductoPorId).put(editarProductoPorId)
 
 export default router;

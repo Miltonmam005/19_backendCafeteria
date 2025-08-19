@@ -3,7 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import '../db/config.js' 
+import '../db/config.js'
 
 export default class Server {
   constructor() {
@@ -12,22 +12,22 @@ export default class Server {
     this.middlewares();
   }
 
-  // AGREGAR METODOS
-  // middlewares
+  //agregar metodos
+  //middlewares
   middlewares() {
-    this.app.use(cors()); //permite tener conecciones remotas
-    this.app.use(express.json()); //interpreta los datos JSON que llega en la solicitud
-    this.app.use(morgan("dev")); //muestra en consola las peticiones que llegan al servidor
+    this.app.use(cors()); // permite tener conexiones remotas
+    this.app.use(express.json()); //interpreta los datos json que llegan en la solicitud
+    this.app.use(morgan("dev"));
     const __dirname = dirname(fileURLToPath(import.meta.url));
-    this.app.use(express.static(`${__dirname}/../public`)); //sirve archivos estáticos desde la carpeta public);
+    this.app.use(express.static(`${__dirname}/../public`));
     console.log(`${__dirname}/../public`);
   }
 
-  // escuchar el puerto
+  //escuchar el puerto
   listen() {
     this.app.listen(this.port, () => {
       console.info(
-        `el servidor se esta ejecutando en: http://localhost:${this.port}`
+        `El servidor se esta ejecutando en: http://localhost:${this.port}`
       );
     });
   }
