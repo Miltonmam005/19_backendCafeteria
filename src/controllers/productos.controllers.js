@@ -2,7 +2,7 @@ import Producto from "../models/producto.js";
 
 export const test = (req, res) => {
   res.status(200);
-  res.send("Primera prueba desde el backend");
+  res.send("Primera prueba desde el backend 😊");
 };
 
 export const leerProductos = async (req, res) => {
@@ -13,11 +13,11 @@ export const leerProductos = async (req, res) => {
     res.status(200).json(listaProductos)
   }catch (error) {
     console.error(error);
-    res.status(500).json({ mensaje: 'Error al leer los productos' });
+    res.status(500).json({ mensaje: 'Error al leer los productos 😕' });
   }
-
 };
-// agregar funcion para crear Producto
+
+ // agregar funcion para crear Producto
 export const crearProducto = async (req, res) => {
   try {
     //1- recibir el objeto que tengo que agregar a la BD
@@ -26,7 +26,7 @@ export const crearProducto = async (req, res) => {
     const nuevoProducto = new Producto(req.body);
     await nuevoProducto.save();
     //4- enviar respuesta
-    res.status(201).json({mensaje: 'El producto fue creado exitosamente'})
+    res.status(201).json({mensaje: 'El producto fue creado exitosamente 😀'})
   } catch (error) {
     console.error(error)
     res.status(500).json({mensaje: 'Error al crear el producto'})
