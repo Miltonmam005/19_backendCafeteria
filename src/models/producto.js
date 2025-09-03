@@ -41,9 +41,8 @@ const productoSchema = new Schema({
     required: true,
     minLength: 10,
     maxLenght: 500,
-  }
+  },
 });
-
 
 const Producto = mongoose.model("producto", productoSchema);
 
