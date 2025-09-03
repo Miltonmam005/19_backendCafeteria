@@ -68,6 +68,7 @@ export const borrarProductoPorId = async (req, res) => {
 export const editarProductoPorId = async (req, res) => {
   try {
     //1- buscar el producto por el id y luego borrar
+    // findByIdAndUpdate  esto edita el producto por id
     const productoModificado = await Producto.findByIdAndUpdate(
       req.params.id,
       req.body
