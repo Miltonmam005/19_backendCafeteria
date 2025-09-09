@@ -18,13 +18,13 @@ export const login = async (req, res) => {
       return res.status(401).json({ mensaje: "credencial incorrecta" });
     }
     // 3- generar el token de seguridad
-    const token = await generarJWT(
-      usuarioExistente.nombreUsuario,
-      usuarioExistente.nombreUsuario,
-      token
-    );
+    const token = await generarJWT(usuarioExistente.nombreUsuario, token);
     // 4- enviar el token al frontend
-    res.status(200).json({ mensaje: "login existoso" });
+    res.status(200).json({
+      mensaje: "login existoso",
+      nombreUsuario: nombreUsuario.nombreUsuario,
+      token,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ mensaje: "Error al loguear al usuario" });
